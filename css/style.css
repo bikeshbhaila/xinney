@@ -109,6 +109,11 @@ body {
 .btn-light:hover {
     transform: translateY(0px);
 }
+
+.btn-cart {
+    background: #fd007a;
+    color: #fff;
+}
 /* end of buttons */
 
 /* rating */
@@ -131,7 +136,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: absolute;
-    bottom: 80px;
+    bottom: 100px;
     left: 0;
     right: 0;
     transition: 0.3s;
@@ -203,7 +208,8 @@ body {
     font-weight: 600;
 }
 
-.navbar-light .navbar-nav .active>.nav-link {
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
     color: #868585;
 }
 
@@ -262,8 +268,12 @@ body {
     color: #fd007a;
     font-weight: 500;
 }
-/* navbar */
+
+
+
+
 /* end of navbar */
+
 /* end of header */
 
 /*---------------------------------------------------------
@@ -454,6 +464,10 @@ body {
         clear: both;
     }
 
+    .search-input::-webkit-input-placeholder {
+        font-size: 8px;
+    }
+    
     .header-topbar-contact a {
         font-size: 10px;
     }
@@ -534,10 +548,48 @@ body {
     .blog h5 {
         font-size: 15px;
     }
+
+    .mobile-menu {
+        width: 70% !important;
+    }
+
+    .header-content img {
+        width: 100px;
+    }
+
+    .header-content a {
+        font-size: 16px;
+    }
+
+    .site-name,
+    .artist-name {
+        font-size: 10px;
+    }
+
+    /* category */
+    .category .heading-section h2 {
+        font-size: 20px;
+    }
+
+    .category-img{
+        height: 400px !important;
+    }
+
+    .info {
+        bottom: 90px;
+    }
+
+    .info a {
+        color: #000;
+        font-size: 15px;
+        padding: 10px;
+    }    
 }
 
  /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {  }
+@media (min-width: 768px) { 
+
+ }
 
  /* Large devices (desktops, 992px and up) */
 @media (max-width: 992px) {
@@ -558,12 +610,144 @@ body {
         top: 15%;
     }
 
-
 }
 
  /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) { 
+    
     .header-content .active {
         border-bottom: 0;
     }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        background: white;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, .15);
+        height: 100vh;
+        transform: translateX(-100%);
+        padding: 10px 15px;
+        margin: auto;
+        overflow: auto;
+        z-index: 1010;
+        transition: all ease 0.29s;
+      }
+  
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, .5);
+        z-index: 999;
+        display: none;
+      }
+
+      .header-content li {
+          display: block;
+          padding-bottom: 15px;
+      }
  }
+
+ .open {
+    transform: translateX(0%);
+    display: block;
+}
+
+.nav-button {
+    z-index: 99999;
+    border: 0px;
+}
+
+.nav-button:focus {
+    outline: none;
+}
+
+.line1, .line2, .line3 {
+    width: 23px;
+    height: 3px;
+    margin: 5px;
+    transition: all .4s;
+}
+
+.change .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .line2 {
+    opacity: 0;
+}
+
+.change .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* ------------------------------------------------------------------
+  # Category page 
+ ------------------------------------------------------------------- */
+.heading-section h2 {
+    border: 2px solid #fd007a;
+}
+
+.heading-section .breadcrumb {
+    background-color: transparent;
+}
+
+.category-img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+}
+
+.count-input {
+    width: 20%;
+    border: 1px solid #fd007a;
+}
+
+.sort-by select {
+    border: 1px solid #fd007a;
+}
+
+.page-item .page-link {
+    color: #909090;
+    border: 0;
+}
+.page-item.active .page-link {
+    background-color: #fd007a;
+    border: 1px solid #000;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.text-main {
+    color: #fd007a;
+}
+
+/* end of category */
+
+/* Product */
+.product-main {
+    border-bottom: 1px solid #000;
+}
+
+.product-main img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.product-info {
+    margin-bottom: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.may-like img {
+    width: 100%;
+    height: 490px;
+    object-fit: cover;
+}
